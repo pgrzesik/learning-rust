@@ -1,5 +1,5 @@
 fn main() {
-    while_loop(5);
+    for_loop();
 }
 
 fn infinite_loop() {
@@ -18,4 +18,12 @@ fn while_loop(x: i32) {
     }
 
     println!("Looping done!");
+}
+
+fn for_loop() {
+    let a = [10, 20, 30, 40, 50];
+
+    for element in a.iter() {
+        println!("{}!", element);
+    }
 }

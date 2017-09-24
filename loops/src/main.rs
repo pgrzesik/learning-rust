@@ -1,5 +1,5 @@
 fn main() {
-    for_loop();
+    countdown_for(6);
 }
 
 fn infinite_loop() {
@@ -26,4 +26,12 @@ fn for_loop() {
     for element in a.iter() {
         println!("{}!", element);
     }
+}
+
+fn countdown_for(x: i32) {
+    for number in (1..x).rev() {
+        println!("{}!", number);
+    }
+
+    println!("Looping done!");
 }

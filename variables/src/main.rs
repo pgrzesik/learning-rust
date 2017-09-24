@@ -11,4 +11,7 @@ fn main() {
 
     let (a, b, c) = tup;
     println!("The value of a is: {}", a);
+
+    let d = tup.0;
+    println!("The value of d is: {}", d);
 }

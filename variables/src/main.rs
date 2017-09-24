@@ -14,4 +14,12 @@ fn main() {
 
     let d = tup.0;
     println!("The value of d is: {}", d);
+
+    let months = [
+        "January", "February", "March", "April", "May",
+        "June", "July", "August", "September",
+        "October", "November", "December"];
+
+    let jan = months[0];
+    println!("First element in array is: {}", jan);
 }

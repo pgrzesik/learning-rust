@@ -1,0 +1,6 @@
+[package]
+name = "fahrenheit_to_celsius"
+version = "0.1.0"
+authors = ["Piotr Grzesik <pj.grzesik@gmail.com>"]
+
+[dependencies]

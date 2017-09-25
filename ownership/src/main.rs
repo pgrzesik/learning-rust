@@ -7,7 +7,13 @@ fn main() {
 
     println!("{}", s);
 
+    let s1 = s.clone();
+
+    // cloning doesn't invalidate original variable
+    println!("s: {}, s1: {}", s, s1);
+
     let s2 = s;
+
     // s is no longer valid here!
-    println!("{}", s);
+    // println!("{}", s); would fail
 }

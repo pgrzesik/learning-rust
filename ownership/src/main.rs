@@ -29,6 +29,14 @@ fn main() {
 
     // x was copied to function so it's still avaialable in this scope
 
+    let given_s = gives_ownership();
+
+    // ownership was transfered from inside func
+
+    let given_back_s = takes_and_gives_back(given_s);
+
+    // given_s is no longer valid here but given_back_s is
+    println!("{}", given_back_s);
 }
 
 
@@ -38,4 +46,14 @@ fn takes_ownership(owned_string: String) {
 
 fn makes_copy(copied_int: i32) {
     println!("{}", copied_int); // copied_int goes out of scope - nothing special happens
+}
+
+fn gives_ownership() -> String {
+    let s = String::from("String inside func!");
+
+    s
+}
+
+fn takes_and_gives_back(taken: String) -> String {
+    taken
 }

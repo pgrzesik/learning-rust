@@ -14,6 +14,11 @@ fn main() {
         String::from("mail@mail2.com"),
         String::from("mickey mouse")
     );
+
+    let updated_user = User {
+        username: String::from("updated_username"),
+        ..user_instance
+    };
 }
 
 fn build_user(email: String, username: String) -> User {

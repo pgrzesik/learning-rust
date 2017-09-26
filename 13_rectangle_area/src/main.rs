@@ -21,7 +21,7 @@ fn main() {
 
     println!(
         "Area of rectangle {:?} is equal to: {}",
-        rect_struct, area_with_struct(&rect_struct)
+        rect_struct, rect_struct.area()
     );
 }
 
@@ -33,8 +33,10 @@ fn area_with_tuple(dimensions: (u32, u32)) -> u32 {
     dimensions.0 * dimensions.1
 }
 
-fn area_with_struct(rect: &Rectangle) -> u32 {
-    rect.length * rect.width
+impl Rectangle {
+    fn area(&self) -> u32 {
+        self.length * self.width
+    }
 }
 
 #[derive(Debug)]

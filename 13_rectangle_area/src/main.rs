@@ -32,7 +32,10 @@ fn main() {
     println!(
         "Does {:?} can hold {:?}: {}",
         rect_struct, other_rect_struct,
-        rect_struct.can_hold(&other_rect_struct))
+        rect_struct.can_hold(&other_rect_struct));
+
+    let square_struct = Rectangle::square(30);
+    println!("Example of square: {:?}", square_struct);
 }
 
 fn area(length: u32, width: u32) -> u32 {
@@ -44,6 +47,13 @@ fn area_with_tuple(dimensions: (u32, u32)) -> u32 {
 }
 
 impl Rectangle {
+    fn square(size: u32) -> Rectangle {
+        Rectangle {
+            length: size,
+            width: size
+        }
+    }
+
     fn area(&self) -> u32 {
         self.length * self.width
     }

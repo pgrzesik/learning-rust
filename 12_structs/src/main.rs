@@ -9,8 +9,21 @@ fn main() {
     user_instance.sign_in_count = 1;
 
     println!("User sign in count: {}", user_instance.sign_in_count);
+
+    let built_user = build_user(
+        String::from("mail@mail2.com"),
+        String::from("mickey mouse")
+    );
 }
 
+fn build_user(email: String, username: String) -> User {
+    User {
+        email,
+        username,
+        sign_in_count: 0,
+        active: false
+    }
+}
 
 struct User {
     username: String,

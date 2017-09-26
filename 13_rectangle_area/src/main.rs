@@ -23,6 +23,16 @@ fn main() {
         "Area of rectangle {:?} is equal to: {}",
         rect_struct, rect_struct.area()
     );
+
+    let other_rect_struct = Rectangle {
+        length: 20,
+        width: 20
+    };
+
+    println!(
+        "Does {:?} can hold {:?}: {}",
+        rect_struct, other_rect_struct,
+        rect_struct.can_hold(&other_rect_struct))
 }
 
 fn area(length: u32, width: u32) -> u32 {
@@ -36,6 +46,10 @@ fn area_with_tuple(dimensions: (u32, u32)) -> u32 {
 impl Rectangle {
     fn area(&self) -> u32 {
         self.length * self.width
+    }
+
+    fn can_hold(&self, other: &Rectangle) -> bool {
+        self.length > other.length && self.width > other.width
     }
 }
 

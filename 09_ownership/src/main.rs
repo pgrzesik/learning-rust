@@ -31,7 +31,7 @@ fn main() {
 
     let given_s = gives_ownership();
 
-    // ownership was transfered from inside func
+    // 09_ownership was transfered from inside func
 
     let given_back_s = takes_and_gives_back(given_s);
 

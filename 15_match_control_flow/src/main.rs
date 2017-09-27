@@ -7,6 +7,11 @@ fn main() {
     let five = Some(5);
     let six = plus_one(five);
     let none = plus_one(None);
+
+    let some_u8_value = Some(3u8);
+    if let Some(3) = some_u8_value {
+        println!("three!");
+    }
 }
 
 #[derive(Debug)]

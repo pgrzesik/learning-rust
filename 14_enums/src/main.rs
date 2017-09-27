@@ -11,6 +11,10 @@ fn main() {
         kind: IpAddrKind::V6,
         address: String::from("::1")
     };
+
+    let home_enum = IpAddrEnum::V4(String::from("127.0.0.1"));
+
+    let loopback_enum = IpAddrEnum::V6(String::from("::1"));
 }
 
 enum IpAddrKind {
@@ -21,4 +25,9 @@ enum IpAddrKind {
 struct IpAddr {
     kind: IpAddrKind,
     address: String
+}
+
+enum IpAddrEnum {
+    V4(String),
+    V6(String)
 }

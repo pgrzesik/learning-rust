@@ -15,6 +15,11 @@ fn main() {
     let home_enum = IpAddrEnum::V4(String::from("127.0.0.1"));
 
     let loopback_enum = IpAddrEnum::V6(String::from("::1"));
+
+    let some_number = Some(5);
+    let some_string = Some("a string");
+
+    let absent_number: Option<i32> = None;
 }
 
 enum IpAddrKind {

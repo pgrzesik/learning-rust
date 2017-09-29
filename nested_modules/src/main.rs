@@ -14,6 +14,8 @@ enum TrafficLight {
 
 use a::series::of;
 use TrafficLight::{Red, Green};
+// Example of glob import
+// use TrafficLight::*;
 
 fn main() {
     of::nested_modules();

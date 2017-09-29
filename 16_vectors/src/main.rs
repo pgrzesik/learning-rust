@@ -11,4 +11,17 @@ fn main() {
 
     mutable_vector.push(1);
     mutable_vector.push(2);
+
+    let row = vec![
+        SpreadsheetCell::Int(1),
+        SpreadsheetCell::Float(1.23),
+        SpreadsheetCell::Text(String::from("example"))
+    ];
+}
+
+
+enum SpreadsheetCell {
+    Int(i32),
+    Float(f64),
+    Text(String)
 }

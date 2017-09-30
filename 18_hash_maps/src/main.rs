@@ -18,4 +18,11 @@ fn main() {
     for (key, value) in &different_scores {
         println!("{}: {}", key, value);
     }
+
+    // Insert overwrites things by default
+
+    scores.entry(String::from("Blue")).or_insert(100);
+    scores.entry(String::from("Red")).or_insert(200);
+
+    println!("{:?}", scores);
 }

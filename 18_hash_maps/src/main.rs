@@ -14,4 +14,8 @@ fn main() {
 
     let team_name = String::from("Blue");
     let score = different_scores.get(&team_name);
+
+    for (key, value) in &different_scores {
+        println!("{}: {}", key, value);
+    }
 }

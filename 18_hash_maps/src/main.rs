@@ -36,4 +36,6 @@ fn main() {
     }
 
     println!("{:?}", map);
+
+    // It's possible to use different hasher than default one
 }

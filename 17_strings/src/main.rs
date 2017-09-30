@@ -8,4 +8,6 @@ fn main() {
     let s_from = String::from("Initial content");
 
     s.push_str("pushed");
+
+    s.push('l');
 }

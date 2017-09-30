@@ -16,4 +16,10 @@ fn main() {
 
     let s3 = s1 + &s2;  // s1 is no longer valid
 
+    let macro_s1 = String::from("tic");
+    let macro_s2 = String::from("tac");
+    let macro_s3 = String::from("toe");
+
+    let macro_s3 = format!("{}-{}-{}", macro_s1, macro_s2, macro_s3); // does not take ownership of any element
+
 }

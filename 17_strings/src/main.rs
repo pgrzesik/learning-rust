@@ -5,5 +5,7 @@ fn main() {
 
     let s_to_string = data.to_string();
 
-    let s = String::from("Initial content");
+    let s_from = String::from("Initial content");
+
+    s.push_str("pushed");
 }

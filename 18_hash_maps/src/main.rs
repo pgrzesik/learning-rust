@@ -25,4 +25,15 @@ fn main() {
     scores.entry(String::from("Red")).or_insert(200);
 
     println!("{:?}", scores);
+
+    let text = "hello wonderful world world";
+
+    let mut map = HashMap::new();
+
+    for word in text.split_whitespace() {
+        let count = map.entry(word).or_insert(0)
+        *count += 1;
+    }
+
+    println!("{:?}", map);
 }

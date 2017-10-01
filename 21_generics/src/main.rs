@@ -15,6 +15,12 @@ struct Point<T> {
     y: T,
 }
 
+impl<T> Point<T> {
+    fn x(&self) -> &T {
+        &self.x
+    }
+}
+
 fn main() {
     let numbers = vec![1, 3, 2, 5, 0];
 

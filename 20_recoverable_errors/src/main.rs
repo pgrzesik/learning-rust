@@ -1,3 +1,5 @@
+use std::io;
+use std::io::Read;
 use std::fs::File;
 use std::io::ErrorKind;
 

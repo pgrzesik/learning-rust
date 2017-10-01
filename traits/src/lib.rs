@@ -2,7 +2,7 @@ pub trait Summarizable {
     fn author_summary(&self) -> String;
 
     fn summary(&self) -> String {
-        String::from("Read more from {}...", self.author_summary())
+        format!("Read more from {}...", self.author_summary())
     }
 }
 
@@ -14,6 +14,10 @@ pub struct NewsArticle {
 }
 
 impl Summarizable for NewsArticle {
+    fn author_summary(&self) -> String {
+        format!("{}", self.author)
+    }
+
     fn summary(&self) -> String {
         format!("{}, by {} ({})", self.headline, self.author, self.location)
     }
@@ -27,6 +31,10 @@ pub struct Tweet {
 }
 
 impl Summarizable for Tweet {
+    fn author_summary(&self) -> String {
+        format!("{}", self.username)
+    }
+
     fn summary(&self) -> String {
         format!("{}: {}", self.username, self.content)
     }

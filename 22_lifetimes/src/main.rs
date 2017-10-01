@@ -17,3 +17,9 @@ fn longest<'a>(x: &'a str, y: &'a str) -> &'a str {
 struct VeryImportant<'a> {
     part: &'a str,
 }
+
+impl<'a> VeryImportant<'a> {
+    fn level(&self) -> i32 {
+        3
+    }
+}

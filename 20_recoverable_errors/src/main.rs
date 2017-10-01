@@ -18,4 +18,7 @@ fn main() {
             panic!("Problem with opening file: {:?}", error)
         }
     };
+
+    let f_unwrap = File::open("hello.txt").unwrap();
+    // Example of unwrap usage to shorten code (Ok(res) => res and Err(e) => panic!("...")
 }

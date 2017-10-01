@@ -1,4 +1,4 @@
-fn largest(list: &[i32]) -> i32 {
+fn largest<T>(list: &[T]) -> T {
     let mut largest = list[0];
 
     for &item in list.iter() {
@@ -9,6 +9,7 @@ fn largest(list: &[i32]) -> i32 {
 
     largest
 }
+
 
 fn main() {
     let numbers = vec![1, 3, 2, 5, 0];

@@ -10,6 +10,10 @@ fn largest<T>(list: &[T]) -> T {
     largest
 }
 
+struct Point<T> {
+    x: T,
+    y: T,
+}
 
 fn main() {
     let numbers = vec![1, 3, 2, 5, 0];

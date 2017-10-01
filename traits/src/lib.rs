@@ -1,6 +1,8 @@
 pub trait Summarizable {
+    fn author_summary(&self) -> String;
+
     fn summary(&self) -> String {
-        String::from("Read more...")
+        String::from("Read more from {}...", self.author_summary())
     }
 }
 

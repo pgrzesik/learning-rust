@@ -40,6 +40,10 @@ impl Summarizable for Tweet {
     }
 }
 
+pub fn notify<T: Summarizable>(item: T) {
+    println!("Breaking news! {}", item.summary());
+}
+
 #[cfg(test)]
 mod tests {
     #[test]

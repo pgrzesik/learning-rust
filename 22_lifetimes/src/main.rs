@@ -13,3 +13,7 @@ fn longest<'a>(x: &'a str, y: &'a str) -> &'a str {
         y
     }
 }
+
+struct VeryImportant<'a> {
+    part: &'a str,
+}

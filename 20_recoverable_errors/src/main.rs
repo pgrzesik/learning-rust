@@ -19,6 +19,8 @@ fn main() {
         }
     };
 
-    let f_unwrap = File::open("hello.txt").unwrap();
     // Example of unwrap usage to shorten code (Ok(res) => res and Err(e) => panic!("...")
+    let f_unwrap = File::open("hello.txt").unwrap();
+    // Similar to unwrap but it's possible to provide panic message
+    let f_expect = File::open("hello.txt").expect("Failed to open file hello.txt");
 }

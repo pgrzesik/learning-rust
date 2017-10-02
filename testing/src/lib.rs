@@ -12,12 +12,13 @@ impl Rectangle {
 
 #[cfg(test)]
 mod tests {
-    #[test]
-    fn it_works() {
-    }
+    use super::*;
 
     #[test]
-    fn it_panics() {
-        panic!("Make this test fail!");
+    fn larger_can_hold_smaller() {
+        let larger = Rectangle { length: 8, width: 8};
+        let smaller = Rectangle { length:5, width: 5};
+
+        assert!(larger.can_hold(&smaller));
     }
 }

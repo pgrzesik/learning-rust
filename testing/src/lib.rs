@@ -14,6 +14,10 @@ pub fn add_two(x: i32) -> i32 {
     x + 2
 }
 
+pub fn will_panic() {
+    panic!("Panicked!");
+}
+
 pub fn greeting(name: &str) -> String{
     format!("Hello, {}!", name)
 }
@@ -50,5 +54,11 @@ mod tests {
             result.contains("John"),
             "Greeting did not contain John, value was `{}`", result
         );
+    }
+
+    #[test]
+    #[should_panic]
+    fn it_panics() {
+        will_panic();
     }
 }

@@ -10,6 +10,10 @@ impl Rectangle {
     }
 }
 
+pub fn add_two(x: i32) -> i32 {
+    x + 2
+}
+
 #[cfg(test)]
 mod tests {
     use super::*;
@@ -28,5 +32,10 @@ mod tests {
         let smaller = Rectangle { length:5, width: 5};
 
         assert!(!smaller.can_hold(&larger));
+    }
+
+    #[test]
+    fn it_adds_two() {
+        assert_eq!(4, add_two(2))
     }
 }

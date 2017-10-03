@@ -21,4 +21,12 @@ mod tests {
 
         assert!(larger.can_hold(&smaller));
     }
+
+    #[test]
+    fn smaller_can_hold_larger() {
+        let larger = Rectangle { length: 8, width: 8};
+        let smaller = Rectangle { length:5, width: 5};
+
+        assert!(!smaller.can_hold(&larger));
+    }
 }

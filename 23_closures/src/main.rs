@@ -15,17 +15,22 @@ fn simulated_expensive_calculation(intensity: i32) -> i32 {
     intensity
 }
 
+
 fn generate_workout(intensity: i32, random_number: i32) {
-    let expensive_result = simulated_expensive_calculation(intensity);
+    let expensive_closure = |num| {
+        println!("Very expensive calculation...");
+        thread::sleep(Duration::from_secs(2));
+        num
+    };
 
     if intensity < 25 {
-        println!("Do {} pushups!", expensive_result);
-        println!("Next, do {} situps!", expensive_result);
+        println!("Do {} pushups!", expensive_closure(intensity));
+        println!("Next, do {} situps!", expensive_closure(intensity));
     } else {
         if random_number == 3 {
             println!("Take a break!");
         } else {
-            println!("Run for {} minutes!", expensive_result);
+            println!("Run for {} minutes!", expensive_closure(intensity));
         }
     }
 }

@@ -39,26 +39,26 @@ impl<T> Cacher<T>
                 let v = (self.calculation)(arg);
                 self.value = Some(v);
                 v
-            };
+            }
         }
     }
 }
 
 fn generate_workout(intensity: i32, random_number: i32) {
-    let expensive_closure = |num| {
+    let mut expensive_result = Cacher::new(|num| {
         println!("Very expensive calculation...");
         thread::sleep(Duration::from_secs(2));
         num
-    };
+    });
 
     if intensity < 25 {
-        println!("Do {} pushups!", expensive_closure(intensity));
-        println!("Next, do {} situps!", expensive_closure(intensity));
+        println!("Do {} pushups!", expensive_result.value(intensity));
+        println!("Next, do {} situps!", expensive_result.value(intensity));
     } else {
         if random_number == 3 {
             println!("Take a break!");
         } else {
-            println!("Run for {} minutes!", expensive_closure(intensity));
+            println!("Run for {} minutes!", expensive_result.value(intensity));
         }
     }
 }

@@ -15,6 +15,12 @@ fn simulated_expensive_calculation(intensity: i32) -> i32 {
     intensity
 }
 
+struct Cacher<T>
+    where T: Fn(i32) -> i32
+{
+    calculation: T,
+    value: Option<i32>
+}
 
 fn generate_workout(intensity: i32, random_number: i32) {
     let expensive_closure = |num| {

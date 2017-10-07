@@ -16,14 +16,16 @@ fn simulated_expensive_calculation(intensity: i32) -> i32 {
 }
 
 fn generate_workout(intensity: i32, random_number: i32) {
+    let expensive_result = simulated_expensive_calculation(intensity);
+
     if intensity < 25 {
-        println!("Do {} pushups!", simulated_expensive_calculation(intensity));
-        println!("Next, do {} situps!", simulated_expensive_calculation(intensity));
+        println!("Do {} pushups!", expensive_result);
+        println!("Next, do {} situps!", expensive_result);
     } else {
         if random_number == 3 {
             println!("Take a break!");
         } else {
-            println!("Run for {} minutes!", simulated_expensive_calculation(intensity));
+            println!("Run for {} minutes!", expensive_result);
         }
     }
 }

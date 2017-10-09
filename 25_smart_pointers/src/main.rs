@@ -1,5 +1,6 @@
 use List::{Cons, Nil};
 use std::ops::Deref;
+use std::mem::drop;
 
 fn main() {
     let boxed = Box::new(5);
@@ -18,6 +19,8 @@ fn main() {
     let smart = CustomSmartPointer {
         data: String::from("Data of smart pointer!")
     };
+    drop(smart);
+    println!("Whoops, already dropped!");
 }
 
 enum List {

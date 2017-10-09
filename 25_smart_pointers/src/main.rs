@@ -1,6 +1,7 @@
 use List::{Cons, Nil};
 use std::ops::Deref;
 use std::mem::drop;
+use std::cell::RefCell;
 
 fn main() {
     let boxed = Box::new(5);
@@ -21,6 +22,9 @@ fn main() {
     };
     drop(smart);
     println!("Whoops, already dropped!");
+
+    let ref_cell_data = RefCell::new(5);
+    demo(&ref_cell_data);
 }
 
 enum List {
@@ -50,4 +54,18 @@ impl Drop for CustomSmartPointer {
     fn drop(&mut self) {
         println!("Dropping smart pointer with data: {}", &self.data);
     }
+}
+
+fn a_fn_that_borrows_immutably(a: &i32) {
+    println!("a is {}", a);
+}
+
+fn a_fn_that_borrows_mutably(b: &mut i32) {
+    *b += 1;
+}
+
+fn demo(r: &RefCell<i32>) {
+    a_fn_that_borrows_immutably(&r.borrow());
+    a_fn_that_borrows_mutably(&mut r.borrow_mut());
+    a_fn_that_borrows_immutably(&r.borrow());
 }

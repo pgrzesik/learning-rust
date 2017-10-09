@@ -14,6 +14,10 @@ fn main() {
     };
 
     assert_eq!(*song, vec![1, 2, 3, 4, 5]);
+
+    let smart = CustomSmartPointer {
+        data: String::from("Data of smart pointer!")
+    };
 }
 
 enum List {
@@ -32,5 +36,15 @@ impl Deref for Mp3 {
 
     fn deref(&self) -> &Vec<u8> {
         &self.audio
+    }
+}
+
+struct CustomSmartPointer {
+    data: String,
+}
+
+impl Drop for CustomSmartPointer {
+    fn drop(&mut self) {
+        println!("Dropping smart pointer with data: {}", &self.data);
     }
 }

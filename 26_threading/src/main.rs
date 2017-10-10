@@ -1,10 +1,10 @@
 use std::thread;
 
 fn main() {
-    let handle = thread::spawn(|| {
-        for i in 1..10 {
-            println!("{} from spawned thread", i);
-        }
+    let v = vec![1, 2, 3, 4];
+
+    let handle = thread::spawn(move || {
+        println!("Hello from spawned thread: {:?}", v);
     });
 
     for i in 1..5 {
